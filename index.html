@@ -1,0 +1,47 @@
+<head>
+    <title>My Attack of the Killer Snowmen</title>
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="script.js"> </script>
+  </head>
+  
+  <body>
+    <a-scene id="scene">
+      <a-assets>
+        <a-asset-item id="snowman" src="snowman/scene.gltf"></a-asset-item>
+        <a-asset-item id="cube" src="freezing_de_mari/scene.gltf"></a-asset-item> 
+        <a-asset-item id="home" src="low_poly_winter_scene/scene.gltf"></a-asset-item> 
+        <a-asset-item id="pine1" src="pine_tree_1/scene.gltf"></a-asset-item> 
+        <a-asset-item id="pine2" src="pine_tree_2/scene.gltf"></a-asset-item> 
+        <a-asset-item id="pine3" src="pine_tree_3/scene.gltf"></a-asset-item> 
+        <a-asset-item id="pine4" src="pine_tree_4/scene.gltf"></a-asset-item> 
+        <a-asset-item id="pine5" src="pine_tree_5/scene.gltf"></a-asset-item> 
+        <img id="logo" src="logo.png"/>
+        <img id="img_gone" src="gone.png"/>
+        <img id="img_goodbye" src="goodbye.png"/>
+      </a-assets>
+      <a-sky src="sky.jpg" repeat="1.75 1.25"></a-sky>
+      <a-plane color="white" width="200" height="200" rotation="-90 0 0"></a-plane>
+      
+      <a-entity id="camera" camera look-controls wasd-controls="acceleration:200" position="0 1.6 0">
+        <a-plane id="intro" color="black" width="10" height="8" position="0 0 -0.9">
+          <a-image src="#logo" position="0 0.5 0"width="2" height="0.25"></a-image>
+          <a-text id="instruction2" width="1.7" color="orange" position="-0.797 0.197 0"></a-text>
+          <a-text id="instruction" width="1.7" position="-0.8 0.2 0"></a-text>
+          <a-entity id="start" visible="false">
+            <a-gltf-model src="#cube" position="-0.1 -0.3 0" scale="0.05 0.05 0.05" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000"></a-gltf-model>
+            <a-text width="1.7" color="blue" position="0 -0.203 0" value="Click to Start"></a-text>
+            <a-text width="1.7" position="0 -0.2 0" value="Click to Start"></a-text>
+          </a-entity>
+          
+        </a-plane>
+        <a-text color="blue" value="Time" width="2"position="-0.997 0.645 -1"></a-text>
+        <a-text id="time" color="white" value="Time" width="2"position="-1 0.65 -1"></a-text>
+        <a-entity id="score" position="-0.5 -0.15 -2"rotation="30 0 0"></a-entity>
+        <a-image id="gone" src="#img_gone" position="0 0 -1" height="0.2" visible="false"></a-image>
+        <a-image id="goodbye" src="#img_goodbye" position="0 0 -1" height="0.2" visible="false"></a-image>
+        <a-cursor></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
